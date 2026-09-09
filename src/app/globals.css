@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+:root {
+  --color-bg-primary: #0B1120;
+  --color-bg-secondary: #111827;
+  --color-bg-card: #172033;
+  --color-primary-blue: #2563EB;
+  --color-cyan-accent: #06B6D4;
+  --color-success-green: #10B981;
+  --color-text-primary: #F8FAFC;
+  --color-text-secondary: #94A3B8;
+  --color-border: #263449;
+}
+
+/* Light mode overrides while maintaining brand identity */
+html:not(.dark) {
+  --color-bg-primary: #F8FAFC;
+  --color-bg-secondary: #F1F5F9;
+  --color-bg-card: #FFFFFF;
+  --color-text-primary: #0F172A;
+  --color-text-secondary: #475569;
+  --color-border: #E2E8F0;
+}
+
+/* Default to dark styling */
+html {
+  background-color: #0B1120;
+  color: #F8FAFC;
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+html:not(.dark) {
+  background-color: #F8FAFC;
+  color: #0F172A;
+  color-scheme: light;
+}
+
+/* Focus styles for keyboard accessibility */
+:focus-visible {
+  outline: 2px solid #2563EB;
+  outline-offset: 2px;
+}
+
+/* Custom scrollbar for technical sleekness */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B1120;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #263449;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
