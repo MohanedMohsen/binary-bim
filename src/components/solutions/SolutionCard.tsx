@@ -20,7 +20,7 @@ export function SolutionCard({ solution, className }: SolutionCardProps) {
   return (
     <div
       className={cn(
-        'flex flex-col rounded-xl border border-[#263449] bg-[#172033] p-8 transition-all duration-200 hover:border-blue-700/60 hover:bg-[#1a2540]',
+        'flex flex-col rounded-xl border border-[#263449] bg-[#172033] p-7 transition-all duration-200 hover:-translate-y-1 hover:border-blue-700/60 hover:bg-[#1a2540] sm:p-8',
         className
       )}
     >

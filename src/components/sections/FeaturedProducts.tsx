@@ -8,7 +8,7 @@ export function FeaturedProducts() {
   const featured = products.filter((p) => p.status === 'available').slice(0, 3);
 
   return (
-    <section className="py-20 bg-[#0B1120]">
+    <section className="bg-[#0B1120] py-20 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
           <SectionHeader
@@ -26,7 +26,7 @@ export function FeaturedProducts() {
           </Link>
         </div>
 
-        <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {featured.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}

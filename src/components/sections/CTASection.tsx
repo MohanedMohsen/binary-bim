@@ -20,9 +20,9 @@ export function CTASection({
   secondaryHref,
 }: CTASectionProps) {
   return (
-    <section className="py-20 bg-[#0B1120]">
+    <section className="bg-[#0B1120] py-20 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="rounded-2xl border border-[#263449] bg-[#111827] px-8 py-14 text-center sm:px-16">
+        <div className="rounded-2xl border border-[#263449] bg-[#111827] px-6 py-14 text-center sm:px-12 sm:py-16 lg:px-16">
           <h2 className="text-2xl font-bold tracking-tight text-slate-100 sm:text-3xl">
             {title}
           </h2>

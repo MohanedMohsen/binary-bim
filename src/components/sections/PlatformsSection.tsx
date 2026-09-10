@@ -29,7 +29,7 @@ const platforms = [
 
 export function PlatformsSection() {
   return (
-    <section className="py-20 bg-[#111827]">
+    <section className="bg-[#111827] py-20 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow="Platforms"
@@ -41,7 +41,7 @@ export function PlatformsSection() {
           {platforms.map((platform) => (
             <article
               key={platform.id}
-              className={`group relative rounded-2xl border bg-[#172033] p-8 transition-all duration-200 ${platform.accent}`}
+              className={`group relative rounded-2xl border bg-[#172033] p-7 transition-all duration-200 sm:p-8 ${platform.accent}`}
             >
               <div className="flex items-center gap-2 mb-4">
                 <div className={`h-2.5 w-2.5 rounded-full ${platform.dot}`} aria-hidden="true" />

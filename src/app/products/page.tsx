@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function ProductsPage() {
   return (
-    <main className="min-h-screen bg-[#0B1120] pt-24 pb-20">
+    <main className="min-h-screen bg-[#0B1120] pb-20 pt-28 sm:pb-24 sm:pt-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow="Products"

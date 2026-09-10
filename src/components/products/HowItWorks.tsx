@@ -7,7 +7,7 @@ interface HowItWorksProps {
 
 export function HowItWorks({ steps }: HowItWorksProps) {
   return (
-    <section className="py-20 bg-[#0B1120]">
+    <section className="bg-[#0B1120] py-20 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow="How It Works"
@@ -15,7 +15,7 @@ export function HowItWorks({ steps }: HowItWorksProps) {
           description="Designed to fit into your existing Revit or AutoCAD workflow with minimal setup."
         />
 
-        <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-3">
+        <div className="mt-12 grid grid-cols-1 gap-10 sm:grid-cols-3">
           {steps.map((step) => (
             <div key={step.number} className="relative flex flex-col">
               {/* Step number */}

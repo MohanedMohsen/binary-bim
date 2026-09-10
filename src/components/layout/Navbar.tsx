@@ -48,14 +48,14 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        'fixed inset-x-0 top-0 z-50 transition-all duration-200',
+        'fixed inset-x-0 top-0 z-50 transition-all duration-300',
         scrolled
           ? 'border-b border-[#263449] bg-[#0B1120]/95 backdrop-blur-md'
           : 'bg-transparent'
       )}
     >
       <nav
-        className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8"
+        className="mx-auto flex h-[4.5rem] max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8"
         aria-label="Main navigation"
       >
         {/* Logo */}
@@ -63,10 +63,10 @@ export function Navbar() {
           href="/"
           className="flex items-center gap-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-md"
         >
-          <div className="flex h-8 w-8 items-center justify-center rounded-md bg-blue-600">
+          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-600 shadow-lg shadow-blue-950/20">
             <span className="text-sm font-bold text-white">B</span>
           </div>
-          <span className="text-base font-semibold text-slate-100">
+          <span className="text-lg font-semibold tracking-tight text-slate-100">
             Binary <span className="text-blue-400">BIM</span>
           </span>
         </Link>
@@ -84,7 +84,7 @@ export function Navbar() {
                     )
                   }
                   className={cn(
-                    'flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium transition-colors',
+                    'flex items-center gap-1 rounded-md px-3 py-2 text-sm font-semibold transition-colors',
                     'text-slate-300 hover:text-slate-100 hover:bg-slate-800/60',
                     'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500'
                   )}
@@ -140,7 +140,7 @@ export function Navbar() {
                 <Link
                   href={item.href}
                   className={cn(
-                    'block rounded-md px-3 py-2 text-sm font-medium transition-colors',
+                    'block rounded-md px-3 py-2 text-sm font-semibold transition-colors',
                     'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500',
                     pathname === item.href
                       ? 'text-blue-400'

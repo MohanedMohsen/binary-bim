@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/Button';
 
 export function Hero() {
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-[#0B1120] pt-16">
+    <section className="relative flex min-h-[calc(100vh-2rem)] items-center overflow-hidden bg-[#0B1120] pt-[4.5rem]">
       {/* Subtle grid background */}
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.025]"
@@ -25,7 +25,7 @@ export function Hero() {
         aria-hidden="true"
       />
 
-      <div className="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
+      <div className="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 sm:py-28 lg:px-8">
         <div className="max-w-3xl">
           {/* Eyebrow */}
           <p className="mb-6 text-sm font-semibold uppercase tracking-widest text-blue-400">
@@ -33,21 +33,21 @@ export function Hero() {
           </p>
 
           {/* Headline */}
-          <h1 className="text-4xl font-bold tracking-tight text-slate-100 sm:text-5xl lg:text-6xl xl:text-7xl">
+          <h1 className="text-4xl font-bold tracking-tight text-slate-100 sm:text-5xl sm:leading-[1.08] lg:text-6xl xl:text-7xl">
             Professional Tools
             <br />
             <span className="text-blue-400">for the AEC Industry</span>
           </h1>
 
           {/* Subheading */}
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-400">
+          <p className="mt-6 max-w-xl text-lg leading-8 text-slate-400">
             Binary BIM develops Revit Add-ins and AutoCAD Plugins that automate
             repetitive AEC workflows — so your team can focus on engineering,
             not data entry.
           </p>
 
           {/* CTAs */}
-          <div className="mt-10 flex flex-wrap gap-4">
+          <div className="mt-10 flex flex-wrap gap-3 sm:gap-4">
             <Button asChild size="lg" variant="primary">
               <Link href="/products">
                 Explore Products

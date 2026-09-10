@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export default function SolutionsPage() {
   return (
     <main className="min-h-screen bg-[#0B1120]">
-      <section className="pt-24 pb-16 bg-[#0B1120]">
+      <section className="bg-[#0B1120] pb-16 pt-28 sm:pt-32">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Solutions"
@@ -36,7 +36,7 @@ export default function SolutionsPage() {
       </section>
 
       {/* Workflow Section */}
-      <section className="py-20 bg-[#111827]">
+      <section className="bg-[#111827] py-20 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Integration"

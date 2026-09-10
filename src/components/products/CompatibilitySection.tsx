@@ -8,7 +8,7 @@ interface CompatibilitySectionProps {
 
 export function CompatibilitySection({ compatibility }: CompatibilitySectionProps) {
   return (
-    <section className="py-20 bg-[#111827]">
+    <section className="bg-[#111827] py-20 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow="Compatibility"

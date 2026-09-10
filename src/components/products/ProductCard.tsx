@@ -16,7 +16,7 @@ export function ProductCard({ product, className }: ProductCardProps) {
     <article
       className={cn(
         'group relative flex flex-col rounded-xl border border-[#263449] bg-[#172033]',
-        'p-6 transition-all duration-200 hover:border-blue-800/60 hover:bg-[#1a2540]',
+        'p-6 transition-all duration-200 hover:-translate-y-1 hover:border-blue-800/60 hover:bg-[#1a2540]',
         className
       )}
     >
@@ -42,7 +42,7 @@ export function ProductCard({ product, className }: ProductCardProps) {
         <p className="text-xs font-medium uppercase tracking-widest text-slate-500 mb-1">
           {product.category}
         </p>
-        <h3 className="text-lg font-semibold text-slate-100 group-hover:text-blue-300 transition-colors">
+        <h3 className="text-lg font-semibold tracking-tight text-slate-100 transition-colors group-hover:text-blue-300">
           {product.name}
         </h3>
         <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-400">

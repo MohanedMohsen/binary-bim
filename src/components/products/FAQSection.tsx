@@ -20,7 +20,7 @@ export function FAQSection({ faqs }: FAQSectionProps) {
   if (!faqs || faqs.length === 0) return null;
 
   return (
-    <section className="py-20 bg-[#111827]">
+    <section className="bg-[#111827] py-20 sm:py-24">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow="FAQ"
@@ -34,7 +34,7 @@ export function FAQSection({ faqs }: FAQSectionProps) {
             return (
               <div
                 key={faq.question}
-                className="rounded-xl border border-[#263449] bg-[#172033] transition-colors"
+                className="rounded-xl border border-[#263449] bg-[#172033] transition-colors duration-200"
               >
                 <button
                   type="button"

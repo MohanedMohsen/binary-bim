@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-[#0B1120] pt-24 pb-20">
+    <main className="min-h-screen bg-[#0B1120] pb-20 pt-28 sm:pb-24 sm:pt-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow="Contact & Licensing"
@@ -25,10 +25,10 @@ export default function ContactPage() {
           align="left"
         />
 
-        <div className="mt-12 grid grid-cols-1 gap-12 lg:grid-cols-12">
+        <div className="mt-12 grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-12">
           {/* Form */}
           <div className="lg:col-span-7">
-            <div className="rounded-2xl border border-[#263449] bg-[#111827] p-6 sm:p-10 shadow-xl">
+            <div className="rounded-2xl border border-[#263449] bg-[#111827] p-6 sm:p-10">
               <h2 className="text-xl font-bold text-slate-100 mb-6">
                 Send an Inquiry
               </h2>

@@ -17,7 +17,7 @@ export default function AboutPage() {
   return (
     <main className="min-h-screen bg-[#0B1120]">
       {/* Header */}
-      <section className="pt-24 pb-16 bg-[#0B1120]">
+      <section className="bg-[#0B1120] pb-16 pt-28 sm:pt-32">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="About Binary BIM"
@@ -29,9 +29,9 @@ export default function AboutPage() {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-16 bg-[#111827]">
+      <section className="bg-[#111827] py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
             <div className="rounded-2xl border border-[#263449] bg-[#172033] p-8 sm:p-10">
               <span className="text-xs font-semibold uppercase tracking-widest text-blue-400">
                 Our Purpose
@@ -66,7 +66,7 @@ export default function AboutPage() {
       </section>
 
       {/* Core Principles */}
-      <section className="py-20 bg-[#0B1120]">
+      <section className="bg-[#0B1120] py-20 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeader
             eyebrow="Principles"

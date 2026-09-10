@@ -54,7 +54,7 @@ interface ProductFeaturesProps {
 
 export function ProductFeatures({ features }: ProductFeaturesProps) {
   return (
-    <section id="features" className="py-20 bg-[#111827]">
+    <section id="features" className="bg-[#111827] py-20 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow="Features"
@@ -68,7 +68,7 @@ export function ProductFeatures({ features }: ProductFeaturesProps) {
             return (
               <div
                 key={feature.title}
-                className="rounded-xl border border-[#263449] bg-[#172033] p-6"
+                className="rounded-xl border border-[#263449] bg-[#172033] p-6 transition-transform duration-200 hover:-translate-y-1"
               >
                 {Icon && (
                   <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-blue-950/50 border border-blue-800/30">

@@ -10,6 +10,7 @@
   --color-text-primary: #F8FAFC;
   --color-text-secondary: #94A3B8;
   --color-border: #263449;
+  --shadow-card: 0 18px 45px rgb(2 6 23 / 0.18);
 }
 
 /* Light mode overrides while maintaining brand identity */
@@ -20,6 +21,7 @@ html:not(.dark) {
   --color-text-primary: #0F172A;
   --color-text-secondary: #475569;
   --color-border: #E2E8F0;
+  --shadow-card: 0 16px 40px rgb(15 23 42 / 0.07);
 }
 
 /* Default to dark styling */
@@ -47,10 +49,24 @@ html:not(.dark) {
   --color-slate-300: #334155;
   --color-slate-400: #475569;
   --color-slate-500: #64748B;
-  --color-slate-600: #94A3B8;
+  --color-slate-600: #64748B;
   --color-slate-700: #CBD5E1;
   --color-slate-800: #E2E8F0;
   --color-slate-900: #F1F5F9;
+  --color-blue-300: #1D4ED8;
+  --color-blue-400: #2563EB;
+  --color-blue-500: #2563EB;
+  --color-blue-600: #1D4ED8;
+  --color-blue-700: #1D4ED8;
+  --color-blue-800: #BFDBFE;
+  --color-blue-950: #DBEAFE;
+  --color-cyan-400: #0E7490;
+  --color-cyan-500: #0891B2;
+  --color-cyan-800: #A5F3FC;
+  --color-cyan-950: #CFFAFE;
+  --color-green-400: #047857;
+  --color-green-800: #A7F3D0;
+  --color-green-950: #D1FAE5;
 }
 
 html:not(.dark) .bg-\[\#0B1120\] { background-color: var(--color-bg-primary) !important; }
@@ -60,6 +76,53 @@ html:not(.dark) .bg-\[\#111827\] { background-color: var(--color-bg-secondary) !
 html:not(.dark) .bg-\[\#172033\] { background-color: var(--color-bg-card) !important; }
 html:not(.dark) .bg-\[\#1a2540\] { background-color: #EFF6FF !important; }
 html:not(.dark) .border-\[\#263449\] { border-color: var(--color-border) !important; }
+
+html:not(.dark) ::-webkit-scrollbar-track { background: #F1F5F9; }
+html:not(.dark) ::-webkit-scrollbar-thumb { background: #CBD5E1; }
+html:not(.dark) ::-webkit-scrollbar-thumb:hover { background: #94A3B8; }
+
+body {
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: #2563EB;
+  color: #FFFFFF;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  body,
+  header,
+  footer,
+  section,
+  article,
+  input,
+  select,
+  textarea {
+    transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease;
+  }
+}
+
+/* A quiet elevation treatment gives dense technical content a clear hierarchy. */
+.rounded-xl.border, .rounded-2xl.border {
+  box-shadow: var(--shadow-card);
+}
+
+html:not(.dark) .rounded-xl.border:hover,
+html:not(.dark) .rounded-2xl.border:hover {
+  box-shadow: 0 20px 48px rgb(15 23 42 / 0.11);
+}
+
+input, select, textarea {
+  color-scheme: inherit;
+}
+
+html:not(.dark) option {
+  background: #FFFFFF;
+  color: #0F172A;
+}
 
 /* Focus styles for keyboard accessibility */
 :focus-visible {

@@ -1,5 +1,5 @@
 import { cn } from '@/lib/utils';
-import { type ButtonHTMLAttributes, forwardRef } from 'react';
+import { cloneElement, isValidElement, type ButtonHTMLAttributes, forwardRef, type ReactElement } from 'react';
 
 type Variant = 'primary' | 'secondary' | 'ghost' | 'outline';
 type Size = 'sm' | 'md' | 'lg';
@@ -36,23 +36,34 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       size = 'md',
       isLoading = false,
       disabled,
+      asChild = false,
       children,
       ...props
     },
     ref
   ) => {
+    const buttonClasses = cn(
+      'inline-flex items-center justify-center font-semibold shadow-sm transition-all duration-200',
+      'hover:-translate-y-0.5 hover:shadow-md active:translate-y-0',
+      'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0B1120]',
+      'disabled:pointer-events-none disabled:opacity-50',
+      variantClasses[variant],
+      sizeClasses[size],
+      className
+    );
+
+    if (asChild && isValidElement(children)) {
+      const child = children as ReactElement<{ className?: string }>;
+      return cloneElement(child, {
+        className: cn(buttonClasses, child.props.className),
+      });
+    }
+
     return (
       <button
         ref={ref}
         disabled={disabled || isLoading}
-        className={cn(
-          'inline-flex items-center justify-center font-medium transition-all duration-150',
-          'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0B1120]',
-          'disabled:pointer-events-none disabled:opacity-50',
-          variantClasses[variant],
-          sizeClasses[size],
-          className
-        )}
+        className={buttonClasses}
         {...props}
       >
         {isLoading ? (

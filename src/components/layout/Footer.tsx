@@ -24,18 +24,18 @@ export function Footer() {
     <footer className="border-t border-[#263449] bg-[#111827]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Main footer */}
-        <div className="py-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link href="/" className="inline-flex items-center gap-2.5">
-              <div className="flex h-8 w-8 items-center justify-center rounded-md bg-blue-600">
+              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-600 shadow-lg shadow-blue-950/20">
                 <span className="text-sm font-bold text-white">B</span>
               </div>
-              <span className="text-base font-semibold text-slate-100">
+              <span className="text-lg font-semibold tracking-tight text-slate-100">
                 Binary <span className="text-blue-400">BIM</span>
               </span>
             </Link>
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-slate-400">
+            <p className="mt-4 max-w-sm text-sm leading-6 text-slate-400">
               {t('footer.description')}
             </p>
             <p className="mt-3 text-xs font-semibold text-blue-400 uppercase tracking-widest">
@@ -49,7 +49,7 @@ export function Footer() {
               <h3 className="text-xs font-semibold uppercase tracking-widest text-slate-500">
                 {section}
               </h3>
-              <ul className="mt-4 space-y-2.5" role="list">
+              <ul className="mt-4 space-y-3" role="list">
                 {links.map((link) => (
                   <li key={link.href}>
                     <Link

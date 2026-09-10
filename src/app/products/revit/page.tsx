@@ -16,7 +16,7 @@ export default function RevitProductsPage() {
   return (
     <main className="min-h-screen bg-[#0B1120]">
       {/* Page header */}
-      <section className="pt-24 pb-16 bg-[#0B1120]">
+      <section className="bg-[#0B1120] pb-16 pt-28 sm:pt-32">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-2 mb-4">
             <div className="h-2 w-2 rounded-full bg-blue-500" aria-hidden="true" />
@@ -34,7 +34,7 @@ export default function RevitProductsPage() {
       </section>
 
       {/* Products */}
-      <section className="pb-20">
+      <section className="pb-20 sm:pb-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <ProductGrid products={revitProducts} />
         </div>
