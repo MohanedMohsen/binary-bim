@@ -36,6 +36,31 @@ html:not(.dark) {
   color-scheme: light;
 }
 
+/*
+ * The application was designed with a small, fixed dark palette in its utility
+ * classes. Keep those utilities readable when the document switches to light
+ * mode while the components are progressively migrated to semantic tokens.
+ */
+html:not(.dark) {
+  --color-slate-100: #0F172A;
+  --color-slate-200: #1E293B;
+  --color-slate-300: #334155;
+  --color-slate-400: #475569;
+  --color-slate-500: #64748B;
+  --color-slate-600: #94A3B8;
+  --color-slate-700: #CBD5E1;
+  --color-slate-800: #E2E8F0;
+  --color-slate-900: #F1F5F9;
+}
+
+html:not(.dark) .bg-\[\#0B1120\] { background-color: var(--color-bg-primary) !important; }
+html:not(.dark) .bg-\[\#0B1120\]\/95 { background-color: rgb(248 250 252 / 0.95) !important; }
+html:not(.dark) .bg-\[\#0B1120\]\/98 { background-color: rgb(248 250 252 / 0.98) !important; }
+html:not(.dark) .bg-\[\#111827\] { background-color: var(--color-bg-secondary) !important; }
+html:not(.dark) .bg-\[\#172033\] { background-color: var(--color-bg-card) !important; }
+html:not(.dark) .bg-\[\#1a2540\] { background-color: #EFF6FF !important; }
+html:not(.dark) .border-\[\#263449\] { border-color: var(--color-border) !important; }
+
 /* Focus styles for keyboard accessibility */
 :focus-visible {
   outline: 2px solid #2563EB;

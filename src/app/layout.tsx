@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { Inter, Cairo } from 'next/font/google';
+import Script from 'next/script';
 import './globals.css';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
@@ -79,7 +80,15 @@ export default function RootLayout({
       className={`${inter.variable} ${cairo.variable} dark`}
       suppressHydrationWarning
     >
-      <body className="min-h-screen flex flex-col bg-[#0B1120] text-[#F8FAFC] antialiased selection:bg-blue-600 selection:text-white font-sans">
+      <head>
+        <Script id="theme-preference" strategy="beforeInteractive">
+          {`try {
+            var theme = localStorage.getItem('theme');
+            document.documentElement.classList.toggle('dark', theme !== 'light');
+          } catch (_) {}`}
+        </Script>
+      </head>
+      <body className="min-h-screen flex flex-col antialiased selection:bg-blue-600 selection:text-white font-sans">
         <I18nProvider>
           <Navbar />
           <div className="flex-1">{children}</div>
