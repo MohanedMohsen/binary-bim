@@ -38,6 +38,10 @@ export interface Product {
   category: string;
   tagline: string;
   description: string;
+  image?: {
+    src: string;
+    alt: string;
+  };
   badge?: string;
   status: ProductStatus;
   features: Feature[];

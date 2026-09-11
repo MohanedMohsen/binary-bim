@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/Button';
 import { ThemeToggle } from '@/components/ui/ThemeToggle';
@@ -13,27 +13,17 @@ import { useI18n } from '@/lib/i18n';
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const pathname = usePathname();
   const [prevPathname, setPrevPathname] = useState(pathname);
-  const { t, dir } = useI18n();
+  const { t } = useI18n();
 
   if (prevPathname !== pathname) {
     setPrevPathname(pathname);
     setMobileOpen(false);
-    setOpenDropdown(null);
   }
 
   const navLinks = [
-    {
-      label: t('nav.products'),
-      href: '/products',
-      children: [
-        { label: t('nav.all_products'), href: '/products' },
-        { label: t('nav.revit'), href: '/products/revit' },
-        { label: t('nav.autocad'), href: '/products/autocad' },
-      ],
-    },
+    { label: t('nav.products'), href: '/products' },
     { label: t('nav.solutions'), href: '/solutions' },
     { label: t('nav.about'), href: '/about' },
     { label: t('nav.contact'), href: '/contact' },
@@ -73,69 +63,7 @@ export function Navbar() {
 
         {/* Desktop nav */}
         <ul className="hidden items-center gap-1 md:flex" role="list">
-          {navLinks.map((item) =>
-            item.children ? (
-              <li key={item.label} className="relative">
-                <button
-                  type="button"
-                  onClick={() =>
-                    setOpenDropdown(
-                      openDropdown === item.label ? null : item.label
-                    )
-                  }
-                  className={cn(
-                    'flex items-center gap-1 rounded-md px-3 py-2 text-sm font-semibold transition-colors',
-                    'text-slate-300 hover:text-slate-100 hover:bg-slate-800/60',
-                    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500'
-                  )}
-                  aria-expanded={openDropdown === item.label}
-                  aria-haspopup="true"
-                >
-                  {item.label}
-                  <ChevronDown
-                    className={cn(
-                      'h-3.5 w-3.5 transition-transform',
-                      openDropdown === item.label && 'rotate-180'
-                    )}
-                    aria-hidden="true"
-                  />
-                </button>
-
-                {openDropdown === item.label && (
-                  <>
-                    <div
-                      className="fixed inset-0 z-40"
-                      onClick={() => setOpenDropdown(null)}
-                      aria-hidden="true"
-                    />
-                    <ul
-                      className={cn(
-                        'absolute top-full z-50 mt-1 min-w-[190px] rounded-xl border border-[#263449] bg-[#111827] py-1 shadow-xl',
-                        dir === 'rtl' ? 'right-0' : 'left-0'
-                      )}
-                      role="menu"
-                    >
-                      {item.children.map((child) => (
-                        <li key={child.href} role="none">
-                          <Link
-                            href={child.href}
-                            role="menuitem"
-                            className={cn(
-                              'block px-4 py-2 text-sm transition-colors',
-                              pathname === child.href
-                                ? 'text-blue-400 bg-blue-950/30'
-                                : 'text-slate-300 hover:text-slate-100 hover:bg-slate-800/60'
-                            )}
-                          >
-                            {child.label}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </>
-                )}
-              </li>
-            ) : (
+          {navLinks.map((item) => (
               <li key={item.label}>
                 <Link
                   href={item.href}
@@ -150,8 +78,7 @@ export function Navbar() {
                   {item.label}
                 </Link>
               </li>
-            )
-          )}
+          ))}
         </ul>
 
         {/* Desktop actions */}
@@ -191,31 +118,7 @@ export function Navbar() {
           className="border-t border-[#263449] bg-[#0B1120]/98 backdrop-blur-md md:hidden"
         >
           <ul className="mx-4 pb-4 pt-2" role="list">
-            {navLinks.map((item) =>
-              item.children ? (
-                <li key={item.label}>
-                  <p className="mt-4 mb-1 px-2 text-xs font-semibold uppercase tracking-widest text-slate-500">
-                    {item.label}
-                  </p>
-                  <ul role="list">
-                    {item.children.map((child) => (
-                      <li key={child.href}>
-                        <Link
-                          href={child.href}
-                          className={cn(
-                            'block rounded-md px-3 py-2 text-sm transition-colors',
-                            pathname === child.href
-                              ? 'text-blue-400'
-                              : 'text-slate-300'
-                          )}
-                        >
-                          {child.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </li>
-              ) : (
+            {navLinks.map((item) => (
                 <li key={item.label}>
                   <Link
                     href={item.href}
@@ -229,8 +132,7 @@ export function Navbar() {
                     {item.label}
                   </Link>
                 </li>
-              )
-            )}
+            ))}
             <li className="mt-4">
               <Button asChild size="md" variant="primary" className="w-full">
                 <Link href="/contact">{t('nav.request_license')}</Link>

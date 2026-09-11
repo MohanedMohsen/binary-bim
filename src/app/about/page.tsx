@@ -1,5 +1,6 @@
 import { SectionHeader } from '@/components/ui/SectionHeader';
 import { CTASection } from '@/components/sections/CTASection';
+import { PromoVideo } from '@/components/sections/PromoVideo';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -27,6 +28,8 @@ export default function AboutPage() {
           />
         </div>
       </section>
+
+      <PromoVideo />
 
       {/* Mission & Vision */}
       <section className="bg-[#111827] py-16 sm:py-20">

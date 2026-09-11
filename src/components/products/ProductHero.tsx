@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { Badge } from '@/components/ui/Badge';
@@ -17,7 +18,7 @@ const platformBadgeVariant = (platform: string) => {
 
 export function ProductHero({ product }: ProductHeroProps) {
   return (
-    <section className="relative overflow-hidden bg-[#0B1120] pt-32 pb-20">
+    <section className="relative overflow-hidden bg-[#0B1120] pb-20 pt-28 sm:pt-32">
       {/* Subtle background grid */}
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.03]"
@@ -51,24 +52,25 @@ export function ProductHero({ product }: ProductHeroProps) {
           </ol>
         </nav>
 
-        <div className="max-w-3xl">
-          <Badge variant={platformBadgeVariant(product.platform)}>
-            {getPlatformLabel(product.platform)}
-          </Badge>
+        <div className={product.image ? 'grid items-center gap-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]' : 'max-w-3xl'}>
+          <div>
+            <Badge variant={platformBadgeVariant(product.platform)}>
+              {getPlatformLabel(product.platform)}
+            </Badge>
 
-          <h1 className="mt-4 text-4xl font-bold tracking-tight text-slate-100 sm:text-5xl lg:text-6xl">
-            {product.name}
-          </h1>
+            <h1 className="mt-4 text-4xl font-bold tracking-tight text-slate-100 sm:text-5xl lg:text-6xl">
+              {product.name}
+            </h1>
 
-          <p className="mt-4 text-xl font-medium text-slate-300">
-            {product.tagline}
-          </p>
+            <p className="mt-4 text-xl font-medium text-slate-300">
+              {product.tagline}
+            </p>
 
-          <p className="mt-6 text-base leading-relaxed text-slate-400 max-w-2xl">
-            {product.description}
-          </p>
+            <p className="mt-6 max-w-2xl text-base leading-relaxed text-slate-400">
+              {product.description}
+            </p>
 
-          <div className="mt-8 flex flex-wrap gap-4">
+            <div className="mt-8 flex flex-wrap gap-4">
             {product.status === 'available' ? (
               <>
                 <Button asChild size="lg" variant="primary">
@@ -78,7 +80,7 @@ export function ProductHero({ product }: ProductHeroProps) {
                   </Link>
                 </Button>
                 <Button asChild size="lg" variant="secondary">
-                  <Link href="#features">See Features</Link>
+                  <Link href="/products">Back to Products</Link>
                 </Button>
               </>
             ) : (
@@ -86,7 +88,21 @@ export function ProductHero({ product }: ProductHeroProps) {
                 <Link href="/contact">Contact for Early Access</Link>
               </Button>
             )}
+            </div>
           </div>
+
+          {product.image && (
+            <div className="relative aspect-[16/10] rounded-2xl border border-[#263449] bg-[#111827] p-3 shadow-xl">
+              <Image
+                src={product.image.src}
+                alt={product.image.alt}
+                priority
+                sizes="(min-width: 1024px) 52vw, 100vw"
+                className="rounded-xl object-contain p-3"
+                fill
+              />
+            </div>
+          )}
         </div>
       </div>
     </section>

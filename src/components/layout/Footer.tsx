@@ -10,8 +10,6 @@ export function Footer() {
   const footerLinks = {
     [t('nav.products')]: [
       { label: t('nav.all_products'), href: '/products' },
-      { label: t('nav.revit'), href: '/products/revit' },
-      { label: t('nav.autocad'), href: '/products/autocad' },
     ],
     Company: [
       { label: t('nav.about'), href: '/about' },

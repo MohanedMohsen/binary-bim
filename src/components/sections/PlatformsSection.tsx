@@ -8,7 +8,7 @@ const platforms = [
     name: 'Revit Add-ins',
     description:
       'Sheet management, room data, element numbering, and more. Automation tools that work directly inside Autodesk Revit.',
-    href: '/products/revit',
+    href: '/products',
     accent: 'border-blue-800/50 hover:border-blue-600/60',
     dot: 'bg-blue-500',
     label: 'Autodesk Revit',
@@ -19,7 +19,7 @@ const platforms = [
     name: 'AutoCAD Plugins',
     description:
       'Layer management, drawing standards, and productivity tools built for AutoCAD workflows in architecture and engineering.',
-    href: '/products/autocad',
+    href: '/products',
     accent: 'border-cyan-800/50 hover:border-cyan-600/60',
     dot: 'bg-cyan-500',
     label: 'Autodesk AutoCAD',

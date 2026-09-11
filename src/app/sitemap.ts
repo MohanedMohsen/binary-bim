@@ -14,8 +14,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
     '',
     '/products',
-    '/products/revit',
-    '/products/autocad',
     '/solutions',
     '/about',
     '/contact',

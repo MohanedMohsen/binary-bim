@@ -1,5 +1,6 @@
 import { SectionHeader } from '@/components/ui/SectionHeader';
-import { ProductsClient } from './ProductsClient';
+import { ProductGrid } from '@/components/products/ProductGrid';
+import { products } from '@/data/products';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -18,11 +19,13 @@ export default function ProductsPage() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow="Products"
-          title="All Binary BIM Tools"
-          description="Professional add-ins and plugins for Autodesk Revit and AutoCAD. Built for architects, engineers, and BIM managers."
+          title="Automation tools for better BIM workflows"
+          description="Focused Revit add-ins and AutoCAD plugins for repetitive AEC and BIM workflows."
           align="left"
         />
-        <ProductsClient />
+        <div className="mt-12">
+          <ProductGrid products={products} />
+        </div>
       </div>
     </main>
   );
