@@ -20,7 +20,7 @@ export function RequestLicenseSection({
         />
 
         <div className="mt-12 rounded-2xl border border-[#263449] bg-[#111827] p-6 sm:p-10">
-          <ContactForm defaultProduct={productId} variant="section" />
+          <ContactForm />
         </div>
       </div>
     </section>

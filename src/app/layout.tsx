@@ -31,18 +31,17 @@ export const metadata: Metadata = {
     template: '%s | Binary BIM',
   },
   description:
-    'Binary BIM develops professional Autodesk Revit Add-ins and AutoCAD Plugins for Architects, Engineers, and BIM Managers.',
+    'Binary BIM develops practical automation software for AEC professionals, with focused Revit and AutoCAD workflows.',
   keywords: [
     'BIM',
-    'Revit Add-ins',
-    'AutoCAD Plugins',
+    'Revit automation',
+    'AutoCAD automation',
     'AEC Automation',
     'Autodesk Revit',
     'Autodesk AutoCAD',
     'Binary BIM',
     'BIM Management',
-    'Sheet Automation',
-    'Revit Numbering',
+    'AEC software',
   ],
   authors: [{ name: 'Binary BIM' }],
   creator: 'Binary BIM',
@@ -58,13 +57,13 @@ export const metadata: Metadata = {
     siteName: 'Binary BIM',
     title: 'Binary BIM — Where BIM meets AUTOMATION',
     description:
-      'Professional engineering software tools and automation plugins for Autodesk Revit and AutoCAD.',
+      'Practical AEC automation software for Autodesk Revit and AutoCAD workflows.',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Binary BIM — Where BIM meets AUTOMATION',
     description:
-      'Professional engineering software tools and automation plugins for Autodesk Revit and AutoCAD.',
+      'Practical AEC automation software for Autodesk Revit and AutoCAD workflows.',
   },
 };
 
