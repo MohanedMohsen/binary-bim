@@ -1,2 +1,2 @@
-import { ProductExperience } from '@/components/ProductExperience';
-export default function ProductsPage(){return <ProductExperience/>}
+import { ProductCatalog } from '@/components/products/ProductCatalog';
+export default function ProductsPage() { return <ProductCatalog />; }

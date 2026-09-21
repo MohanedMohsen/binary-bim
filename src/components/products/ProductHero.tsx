@@ -70,21 +70,21 @@ export function ProductHero({ product }: ProductHeroProps) {
               {product.description}
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div className="mt-8 flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
             {product.status === 'available' ? (
               <>
-                <Button asChild size="lg" variant="primary">
+                <Button asChild size="lg" variant="primary" className="w-full sm:w-auto justify-center">
                   <Link href="/contact">
                     Request License
                     <ArrowRight className="ml-1 h-4 w-4" aria-hidden="true" />
                   </Link>
                 </Button>
-                <Button asChild size="lg" variant="secondary">
+                <Button asChild size="lg" variant="secondary" className="w-full sm:w-auto justify-center">
                   <Link href="/products">Back to Products</Link>
                 </Button>
               </>
             ) : (
-              <Button asChild size="lg" variant="secondary">
+              <Button asChild size="lg" variant="secondary" className="w-full sm:w-auto justify-center">
                 <Link href="/contact">Contact for Early Access</Link>
               </Button>
             )}

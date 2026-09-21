@@ -3,12 +3,10 @@ import { ContactForm } from '@/components/sections/ContactForm';
 
 interface RequestLicenseSectionProps {
   productName: string;
-  productId: string;
 }
 
 export function RequestLicenseSection({
   productName,
-  productId,
 }: RequestLicenseSectionProps) {
   return (
     <section id="license" className="border-t border-[#263449] bg-[#0B1120] py-20 sm:py-24">

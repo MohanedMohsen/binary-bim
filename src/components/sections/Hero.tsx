@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/Button';
 
 export function Hero() {
   return (
-    <section className="relative flex min-h-[calc(100vh-2rem)] items-center overflow-hidden bg-[#0B1120] pt-[4.5rem]">
+    <section className="relative flex min-h-[calc(100svh-4.5rem)] sm:min-h-[calc(100vh-4.5rem)] items-center overflow-hidden bg-[#0B1120] pt-[4.5rem]">
       {/* Subtle grid background */}
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.025]"
@@ -18,7 +18,7 @@ export function Hero() {
 
       {/* Radial glow — restrained */}
       <div
-        className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[600px] w-[600px] rounded-full opacity-10"
+        className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[min(600px,90vw)] h-[min(600px,90vw)] rounded-full opacity-10"
         style={{
           background: 'radial-gradient(circle, #2563EB 0%, transparent 70%)',
         }}
@@ -47,14 +47,14 @@ export function Hero() {
           </p>
 
           {/* CTAs */}
-          <div className="mt-10 flex flex-wrap gap-3 sm:gap-4">
-            <Button asChild size="lg" variant="primary">
+          <div className="mt-10 flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
+            <Button asChild size="lg" variant="primary" className="w-full sm:w-auto justify-center">
               <Link href="/products">
                 Explore Products
                 <ArrowRight className="ml-1.5 h-4 w-4" aria-hidden="true" />
               </Link>
             </Button>
-            <Button asChild size="lg" variant="secondary">
+            <Button asChild size="lg" variant="secondary" className="w-full sm:w-auto justify-center">
               <Link href="/contact">Request License</Link>
             </Button>
           </div>

@@ -1,23 +1,4 @@
-export const product = {
-  slug: 'binary-bim',
-  name: 'Binary BIM',
-  image: '/images/products/revit-finish-workspace.jpg',
-  screenshots: [
-    '/images/products/revit-finish-workspace.jpg',
-    '/images/products/room-style-library.jpg',
-    '/images/products/room-style-mapping.jpg',
-    '/images/products/room-style-library-dark.jpg',
-    '/images/products/room-style-mapping-dark.jpg',
-    '/images/products/finish-layer-setup.jpg',
-    '/images/products/finish-layer-workflow.jpg',
-    '/images/products/room-finish-panel.jpg',
-    '/images/products/room-finish-settings.jpg',
-    '/images/products/room-style-assignment.jpg',
-    '/images/products/revit-room-finish.jpg',
-    '/images/products/revit-finish-dark.jpg',
-  ],
-} as const;
-
-// Legacy component compatibility. Public UI intentionally presents only `product`.
-export const products: any[] = [];
-export const solutions: any[] = [];
+export type Product = { slug: string; name: string; eyebrow: string; summary: string; image: string; screenshots: readonly string[]; video: string; capabilities: readonly { title: string; body: string; number: string }[] };
+export const products: readonly Product[] = [{ slug: 'binary-bim', name: 'Binary BIM', eyebrow: 'Revit · Room finishes', summary: 'A focused Revit workspace for building finish styles, mapping rooms, and applying layers with control.', image: '/images/products/revit-finish-workspace.jpg', video: '/videos/binary-bim-promo.mp4', screenshots: ['/images/products/revit-finish-workspace.jpg','/images/products/room-style-library.jpg','/images/products/room-style-mapping.jpg','/images/products/room-style-library-dark.jpg','/images/products/room-style-mapping-dark.jpg','/images/products/finish-layer-setup.jpg','/images/products/finish-layer-workflow.jpg','/images/products/room-finish-panel.jpg','/images/products/room-finish-settings.jpg','/images/products/room-style-assignment.jpg','/images/products/revit-room-finish.jpg','/images/products/revit-finish-dark.jpg'], capabilities: [{number:'01',title:'Style libraries',body:'Build and retain repeatable room-finish systems in one deliberate workspace.'},{number:'02',title:'Room mapping',body:'Review rooms, make assignments, and keep decisions visible before applying them.'},{number:'03',title:'Finish layers',body:'Configure wall, floor, and ceiling finishes without losing the context of the model.'}] }] as const;
+export const product = products[0];
+export function getProduct(slug: string) { return products.find((item) => item.slug === slug); }

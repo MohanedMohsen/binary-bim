@@ -1,3 +1,45 @@
 'use client';
-import { ContactForm } from '@/components/sections/ContactForm'; import { useI18n } from '@/lib/i18n';
-export default function ContactPage(){const {t}=useI18n();return <main className="min-h-screen bg-[#0B1120] px-4 pb-20 pt-32 sm:px-6"><div className="mx-auto max-w-6xl"><p className="text-xs font-semibold tracking-[.16em] text-blue-400">{t('contact.kicker')}</p><h1 className="mt-4 text-4xl font-bold text-slate-100 sm:text-5xl">{t('contact.title')}</h1><p className="mt-5 max-w-2xl text-lg leading-8 text-slate-400">{t('contact.body')}</p><div className="mt-12 grid gap-8 lg:grid-cols-[1fr_.55fr]"><section className="rounded-2xl border border-[#263449] bg-[#111827] p-6 sm:p-9"><h2 className="text-xl font-semibold text-slate-100">{t('contact.form')}</h2><div className="mt-7"><ContactForm/></div></section><aside className="rounded-2xl border border-[#263449] bg-[#172033] p-7"><h2 className="font-semibold text-slate-100">{t('contact.direct')}</h2><p className="mt-3 text-sm leading-6 text-slate-400">{t('contact.directbody')}</p><a className="mt-4 block text-sm font-semibold text-blue-400" href="mailto:mohanedelamghraby6@gmail.com">mohanedelamghraby6@gmail.com</a></aside></div></div></main>}
+
+import { ContactForm } from '@/components/sections/ContactForm';
+import { useI18n } from '@/lib/i18n';
+
+export default function ContactPage() {
+  const { t } = useI18n();
+
+  return (
+    <main className="contact-page min-h-screen bg-[#0B1120] px-4 pb-20 pt-24 sm:pt-32 sm:px-6">
+      <div className="mx-auto max-w-7xl">
+        <div className="grid gap-12 lg:gap-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)]">
+          {/* Form Section */}
+          <section>
+            <p className="eyebrow">{t('contact.kicker')}</p>
+            <h1 className="mt-4 sm:mt-5 text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-slate-100">
+              {t('contact.title')}
+            </h1>
+            <p className="mt-4 sm:mt-5 max-w-lg text-base sm:text-lg leading-7 sm:leading-8 text-slate-400">
+              {t('contact.body')}
+            </p>
+            <div className="mt-8 sm:mt-10">
+              <ContactForm />
+            </div>
+          </section>
+
+          {/* Direct Contact Info */}
+          <aside className="flex flex-col justify-center pt-4 lg:pt-0">
+            <p className="eyebrow">{t('contact.direct')}</p>
+            <a
+              className="contact-email mt-4 sm:mt-5 break-all hover:text-cyan-300 transition-colors"
+              href="mailto:mohanedelamghraby6@gmail.com"
+            >
+              mohanedelamghraby6@gmail.com
+              <span className="text-cyan-400 ms-1 not-italic">↗</span>
+            </a>
+            <p className="mt-5 sm:mt-7 max-w-sm text-sm leading-6 text-slate-400">
+              {t('contact.directbody')}
+            </p>
+          </aside>
+        </div>
+      </div>
+    </main>
+  );
+}
